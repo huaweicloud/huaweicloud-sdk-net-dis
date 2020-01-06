@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EE66A38-02E6-4BDB-BB3F-43B990C18290}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Bigdata.Dis.Sdk.DISCommon</RootNamespace>
+    <AssemblyName>DISCommon</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\DISCommon.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\eSDK_OBS_API\Service References\log4net-2.0.8\3.5\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net35\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth\ICredentials.cs" />
+    <Compile Include="Auth\InternalConfig.cs" />
+    <Compile Include="Client\BasicDisRestClient.cs" />
+    <Compile Include="Client\ClientBuilder.cs" />
+    <Compile Include="Client\DISClientBuilder.cs" />
+    <Compile Include="Client\DISIngestionClient.cs" />
+    <Compile Include="Client\RestClientWrapper.cs" />
+    <Compile Include="Config\DISExConfig.cs" />
+    <Compile Include="DISWeb\SchemaResource.cs" />
+    <Compile Include="DISWeb\PartitionResource.cs" />
+    <Compile Include="DISWeb\MetricResource.cs" />
+    <Compile Include="DISWeb\CheckPointResource.cs" />
+    <Compile Include="DISWeb\AppResource.cs" />
+    <Compile Include="DISWeb\IDISRequest.cs" />
+    <Compile Include="DISWeb\IRequestEx.cs" />
+    <Compile Include="DISWeb\RecordResource.cs" />
+    <Compile Include="DISWeb\TransferTaskResource.cs" />
+    <Compile Include="Ext\DISDefaultRequest.cs" />
+    <Compile Include="Ext\DISWebServiceRequest.cs" />
+    <Compile Include="Interface\IAppService.cs" />
+    <Compile Include="Interface\ICheckpointService.cs" />
+    <Compile Include="Interface\IPartitionService.cs" />
+    <Compile Include="Interface\IStreamService.cs" />
+    <Compile Include="Interface\ITransferTaskService.cs" />
+    <Compile Include="Log\LogHelper.cs" />
+    <Compile Include="Model\BodySerializeType.cs" />
+    <Compile Include="Model\AddTransferTasksRequest.cs" />
+    <Compile Include="Model\CloudtableDestinationDescriptorEntity.cs" />
+    <Compile Include="Model\CheckPointRequest.cs" />
+    <Compile Include="Model\DescribeAppListRequest.cs" />
+    <Compile Include="Model\GetStreamConsumingRequest.cs" />
+    <Compile Include="Model\GetStreamConsumingResult.cs" />
+    <Compile Include="Model\InterfaceType.cs" />
+    <Compile Include="Model\StreamTransferTaskDetailResult.cs" />
+    <Compile Include="Model\TransferTaskStateType.cs" />
+    <Compile Include="Model\StreamTransferTaskListResult.cs" />
+    <Compile Include="Model\DescribeAppResult.cs" />
+    <Compile Include="Model\CreateAppRequest.cs" />
+    <Compile Include="Model\CreateStreamRequest.cs" />
+    <Compile Include="Model\DescribeAppListResult.cs" />
+    <Compile Include="Model\DescribeStreamListResult.cs" />
+    <Compile Include="Model\DescribeStreamRequestEntity.cs" />
+    <Compile Include="Model\DLIDestinationDescriptorEntity.cs" />
+    <Compile Include="Model\DwsDestinationDescriptorEntity.cs" />
+    <Compile Include="Model\ErrorEntity.cs" />
+    <Compile Include="Model\GetPartitionMetricRequest.cs" />
+    <Compile Include="Model\GetMetricResult.cs" />
+    <Compile Include="Model\GetStreamMetricRequest.cs" />
+    <Compile Include="Model\MRSDestinationDescriptorEntity.cs" />
+    <Compile Include="Model\ObsDestinationDescriptorEntity.cs" />
+    <Compile Include="Model\ResponseResult.cs" />
+    <Compile Include="Model\UpdateShardsRequest.cs" />
+    <Compile Include="Model\UpdateShardsResult.cs" />
+    <Compile Include="Signer\AbstractDISSigner.cs" />
+    <Compile Include="Signer\AbstractSigner.cs" />
+    <Compile Include="Signer\DISSigner.cs" />
+    <Compile Include="Signer\DISSignerEx.cs" />
+    <Compile Include="Signer\IRegionSigner.cs" />
+    <Compile Include="Signer\IServiceSigner.cs" />
+    <Compile Include="Signer\ISigner.cs" />
+    <Compile Include="Signer\SignerConfig.cs" />
+    <Compile Include="Signer\SignerConfigJsonHelper.cs" />
+    <Compile Include="Signer\SignerFactory.cs" />
+    <Compile Include="Signer\SignerRequestParams.cs" />
+    <Compile Include="Signer\SignerUtils.cs" />
+    <Compile Include="Signer\SignUtil.cs" />
+    <Compile Include="Config\DISConfig.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DISWeb\CursorResource.cs" />
+    <Compile Include="DISWeb\HttpHeaderKeys.cs" />
+    <Compile Include="DISWeb\ResourcePathBuilder.cs" />
+    <Compile Include="DISWeb\RestResource.cs" />
+    <Compile Include="DISWeb\StreamResource.cs" />
+    <Compile Include="Auth\BasicCredentials.cs" />
+    <Compile Include="Ext\DefaultRequest.cs" />
+    <Compile Include="Ext\HttpMethodName.cs" />
+    <Compile Include="Ext\Properties.cs" />
+    <Compile Include="Interface\IDISRestClient.cs" />
+    <Compile Include="Signer\DefaultSigner.cs" />
+    <Compile Include="Utils\AESCoder.cs" />
+    <Compile Include="Utils\BinaryUtils.cs" />
+    <Compile Include="Utils\Cache\CacheManager.cs" />
+    <Compile Include="Utils\Cache\CacheResenderThread.cs" />
+    <Compile Include="Utils\Cache\CacheUtils.cs" />
+    <Compile Include="Utils\Cache\ICacheManager.cs" />
+    <Compile Include="Utils\ExponentialBackOff.cs" />
+    <Compile Include="Utils\Hex.cs" />
+    <Compile Include="Interface\IDataService.cs" />
+    <Compile Include="Interface\IDIS.cs" />
+    <Compile Include="Model\CommitCheckpointRequest.cs" />
+    <Compile Include="Model\DescribeStreamRequest.cs" />
+    <Compile Include="Model\DescribeStreamResult.cs" />
+    <Compile Include="Model\GetCheckpointRequest.cs" />
+    <Compile Include="Model\GetCheckpointResult.cs" />
+    <Compile Include="Model\GetRecordsRequest.cs" />
+    <Compile Include="Model\GetRecordsResult.cs" />
+    <Compile Include="Model\GetRecordsWithCheckpointingRequest.cs" />
+    <Compile Include="Model\GetShardIteratorRequest.cs" />
+    <Compile Include="Model\GetShardIteratorResult.cs" />
+    <Compile Include="Model\MergeShardsRequest.cs" />
+    <Compile Include="Model\MergeShardsResult.cs" />
+    <Compile Include="Model\PartitionResult.cs" />
+    <Compile Include="Model\PutRecordRequest.cs" />
+    <Compile Include="Model\PutRecordResult.cs" />
+    <Compile Include="Model\PutRecordsRequest.cs" />
+    <Compile Include="Model\PutRecordsRequestEntry.cs" />
+    <Compile Include="Model\PutRecordsResult.cs" />
+    <Compile Include="Model\PutRecordsResultEntry.cs" />
+    <Compile Include="Model\Record.cs" />
+    <Compile Include="Model\SplitShardRequest.cs" />
+    <Compile Include="Model\SplitShardResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\EncryptUtils.cs" />
+    <Compile Include="Utils\HttpUtils.cs" />
+    <Compile Include="Utils\PBKDF2Coder.cs" />
+    <Compile Include="Utils\Sha256Hash.cs" />
+    <Compile Include="Utils\CompressUtils.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\ValidDataUtils.cs" />
+    <Compile Include="Utils\VersionUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="version.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eSDK_OBS_API\eSDK_OBS_API.csproj">
+      <Project>{19a44cae-fc14-4823-bfd9-746f032a4847}</Project>
+      <Name>eSDK_OBS_API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

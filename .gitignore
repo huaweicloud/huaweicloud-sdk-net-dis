@@ -1,0 +1,15 @@
+# Visual Studio per-user settings data
+
+*.suo
+*.user
+**/.idea/**
+
+
+# Build/Test folders
+
+**/bin/
+**/obj/
+**/TestResults/
+**/Temp/
+**/buildlogs/
+**/.vs/

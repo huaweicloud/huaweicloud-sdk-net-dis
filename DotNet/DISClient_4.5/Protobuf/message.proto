@@ -1,0 +1,57 @@
+syntax = "proto3";
+package google.protobuf;
+option csharp_namespace = "HuaweiCloud.DIS.Api.Protobuf";
+ 
+message PutRecordsRequest {
+  string streamName = 1;
+  repeated PutRecordsRequestEntry records = 2;
+}
+ 
+message PutRecordsRequestEntry {
+    bytes data = 3;
+    string explicitHashKey =4;
+    string partitionKey =5;
+    string partitionId = 6;
+    PutRecordsRequestEntryExtendedInfo extendedInfo = 7;
+    int64 timestamp = 29;
+}
+ 
+message PutRecordsRequestEntryExtendedInfo{
+	string fileName = 8;
+	string deliverDataId = 9;
+	bool endFlag = 10;
+	int64 seqNum = 11;
+}
+ 
+message PutRecordsResult{
+	int32 failedRecordCount = 21;
+	repeated PutRecordsResultEntry records = 22;
+}
+ 
+message PutRecordsResultEntry{
+	string shardId = 23;
+	string sequenceNumber = 24;
+	string errorCode = 25;
+	string errorMessage = 26;
+}
+ 
+ 
+message GetRecordsRequest {
+    string shardIterator =12;
+    int32 limit =13;
+}
+ 
+message GetRecordsResult {
+    string nextShardIterator =14;
+//    int64 millisBehindLatest =15;
+    repeated Record records = 16;
+}
+ 
+message Record{
+	string partitionKey = 17;
+	string sequenceNumber = 18;
+	bytes data = 19;
+//	approximateArrivalTimestamp = 20;
+	int64 timestamp = 27;
+	string timestampType = 28;
+}

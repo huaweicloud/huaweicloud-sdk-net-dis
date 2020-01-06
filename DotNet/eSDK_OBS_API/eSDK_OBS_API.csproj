@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19A44CAE-FC14-4823-BFD9-746F032A4847}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eSDK_OBS_API</RootNamespace>
+    <AssemblyName>eSDK_OBS_API_.NET</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BCL;BCL35;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\eSDK_OBS_API_.NET.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <NoWarn>419,1570,1591</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;BCL;BCL35;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\eSDK_OBS_API_.NET.xml</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <DebugSymbols>true</DebugSymbols>
+    <NoWarn>419,1591</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>Service References\log4net-2.0.8\3.5\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AesCryptor.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ActionIdentifier.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ActionIdentifiers\IdentityandAccessManagementActionIdentifiers.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ActionIdentifiers\MarketplaceActionIdentifiers.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ActionIdentifiers\SESActionIdentifiers.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Internal\JsonDocumentFields.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Internal\JsonPolicyReader.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Internal\JsonPolicyWriter.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ActionIdentifiers\S3ActionIdentifiers.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ActionIdentifiers\SNSActionIdentifiers.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Condition.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ConditionFactory.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ConditionFactory.S3.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ConditionFactory.SNS.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Policy.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Principal.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Resource.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\ResourceFactory.cs" />
+    <Compile Include="OBS.Auth\AccessControlPolicy\Statement.cs" />
+    <Compile Include="OBS.Runtime\ObsServiceClient.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\NullSigner.cs" />
+    <Compile Include="OBS.Runtime\Internal\AutoConstructedTypes.cs" />
+    <Compile Include="OBS.Runtime\Internal\Settings\PersistenceManager.cs" />
+    <Compile Include="OBS.Runtime\Internal\Settings\SettingsCollection.cs" />
+    <Compile Include="OBS.Runtime\Internal\Settings\SettingsConstants.cs" />
+    <Compile Include="OBS.Runtime\Internal\Settings\UserCrypto.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\CustomMarshallTransformations.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\IRequestMarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\ILogger.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\NonDisposingWrapperStream.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\ErrorHandler\WebExceptionHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\CredentialsRetriever.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\EndpointResolver.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\CallbackHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\GenericExceptionHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\GenericHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\MetricsHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\HttpErrorResponseException.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\HttpHandler\HttpHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\Marshaller.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\RedirectHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\Signer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OBS.Runtime\Pipeline\Handlers\Unmarshaller.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\HttpHandler\HttpWebRequestFactory.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\HttpHandler\IHttpRequestFactory.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\RetryHandler\DefaultRetryPolicy.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\RetryHandler\RetryPolicy.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\RuntimeAsyncResult.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\Contexts.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\RetryHandler\RetryHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\IPipelineHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\PipelineHandler.cs" />
+    <Compile Include="OBS.Runtime\Pipeline\RuntimePipeline.cs" />
+    <Compile Include="OBS.Runtime\RequestMetrics.cs" />
+    <Compile Include="OBS.S3\Encryption\Internal\SetupDecryptionHandler.cs" />
+    <Compile Include="OBS.S3\Encryption\Internal\SetupEncryptionHandler.cs" />
+    <Compile Include="OBS.S3\Encryption\Internal\UserAgentHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3ExceptionHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3KmsHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3PostMarshallHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3PreMarshallHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3RedirectHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3ResponseHandler.cs" />
+    <Compile Include="OBS.S3\Internal\ObsS3RetryPolicy.cs" />
+    <Compile Include="OBS.S3\Model\CloudFunctionConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketTaggingRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketTaggingResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetPreSignedUrlResponse.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketNotificationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketNotificationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\NotificationConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketTaggingRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketQuotaRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketTaggingResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketQuotaResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketStorageInfoRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketStorageInfoResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketMetadataRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketMetadataResponse.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CloudFunctionConfigurationUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketTaggingResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketTaggingRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketTaggingRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketTaggingResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketQuotaRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketQuotaResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketStorageInfoRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketStorageInfoResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketMetadataRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketMetadataResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionExpirationUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\OptionsBucketRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\OptionsBucketResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\OptionsObjectRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\OptionsObjectResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PostDeleteBucketRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PostDeleteBukcetResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketTaggingResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketTaggingRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketQuotaRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketQuotaResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\QueueConfigurationUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
+    <Compile Include="OBS.S3\Model\LifecycleRuleNoncurrentVersionTransition.cs" />
+    <Compile Include="OBS.S3\Model\OptionsBucketRequest.cs" />
+    <Compile Include="OBS.S3\Model\OptionsBucketResponse.cs" />
+    <Compile Include="OBS.S3\Model\OptionsObjectRequest.cs" />
+    <Compile Include="OBS.S3\Model\OptionsObjectResponse.cs" />
+    <Compile Include="OBS.S3\Model\PostDeleteBucketRequest.cs" />
+    <Compile Include="OBS.S3\Model\PostDeleteBucketResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketTaggingResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketTaggingRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketQuotaRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketQuotaResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketNotificationRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketNotificationResponse.cs" />
+    <Compile Include="OBS.S3\Model\QueueConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\StreamSizeMismatchException.cs" />
+    <Compile Include="OBS.S3\Model\FilterRule.cs" />
+    <Compile Include="OBS.S3\Util\ObsS3Uri.cs" />
+    <Compile Include="OBS.S3\Util\S3EventNotification.cs" />
+    <Compile Include="OBS.S3\ObsS3Client.cs" />
+    <Compile Include="OBS.S3\ObsS3Client.Extensions.cs" />
+    <Compile Include="OBS.S3\ObsS3Config.cs" />
+    <Compile Include="OBS.S3\ObsS3Exception.cs" />
+    <Compile Include="OBS.S3\Model\ByteRange.cs" />
+    <Compile Include="OBS.S3\Model\CORSRule.cs" />
+    <Compile Include="OBS.S3\Model\DeleteObjectsException.cs" />
+    <Compile Include="OBS.S3\Model\DeleteObjectsRequest.Extensions.cs" />
+    <Compile Include="OBS.S3\Model\Expiration.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketPolicyResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetACLResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetPreSignedUrlRequest.cs" />
+    <Compile Include="OBS.S3\IObsS3.cs" />
+    <Compile Include="OBS.S3\IO\S3DirectoryInfo.cs" />
+    <Compile Include="OBS.S3\IO\S3FileInfo.cs" />
+    <Compile Include="OBS.S3\IO\S3FileStream.cs" />
+    <Compile Include="OBS.S3\IO\S3FileSystemInfo.cs" />
+    <Compile Include="OBS.S3\IO\S3Helper.cs" />
+    <Compile Include="OBS.S3\Model\AbortMultipartUploadRequest.cs" />
+    <Compile Include="OBS.S3\Model\AbortMultipartUploadResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutObjectRequest.bcl.cs" />
+    <Compile Include="OBS.S3\Model\S3Bucket.cs" />
+    <Compile Include="OBS.S3\Model\CompleteMultipartUploadRequest.cs" />
+    <Compile Include="OBS.S3\Model\CompleteMultipartUploadResponse.cs" />
+    <Compile Include="OBS.S3\Model\MultipartUpload.cs" />
+    <Compile Include="OBS.S3\Model\PartDetail.cs" />
+    <Compile Include="OBS.S3\Model\PartEtag.cs" />
+    <Compile Include="OBS.S3\Model\RoutingRuleCondition.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CORSRuleUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\MfaCodes.cs" />
+    <Compile Include="OBS.S3\Model\S3AccessControlList.cs" />
+    <Compile Include="OBS.S3\Model\S3BucketVersioningConfig.cs" />
+    <Compile Include="OBS.S3\Model\S3Grant.cs" />
+    <Compile Include="OBS.S3\Model\S3Grantee.cs" />
+    <Compile Include="OBS.S3\Model\S3Object.cs" />
+    <Compile Include="OBS.S3\Model\CopyObjectRequest.cs" />
+    <Compile Include="OBS.S3\Model\CopyObjectResponse.cs" />
+    <Compile Include="OBS.S3\Model\CORSConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketResponse.cs" />
+    <Compile Include="OBS.S3\Model\InitiateMultipartUploadRequest.cs" />
+    <Compile Include="OBS.S3\Model\InitiateMultipartUploadResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteCORSConfigurationRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteCORSConfigurationResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteLifecycleConfigurationRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteLifecycleConfigurationResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketPolicyRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketPolicyResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketWebsiteRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteBucketWebsiteResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeletedObject.cs" />
+    <Compile Include="OBS.S3\Model\DeleteObjectRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteObjectResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteObjectsRequest.cs" />
+    <Compile Include="OBS.S3\Model\DeleteObjectsResponse.cs" />
+    <Compile Include="OBS.S3\Model\DeleteError.cs" />
+    <Compile Include="OBS.S3\Model\LifecycleRuleExpiration.cs" />
+    <Compile Include="OBS.S3\Model\GetCORSConfigurationRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetCORSConfigurationResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetLifecycleConfigurationRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetLifecycleConfigurationResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketLocationRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketLocationResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketLoggingRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketLoggingResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketPolicyRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketVersioningRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketVersioningResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketWebsiteRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetBucketWebsiteResponse.cs" />
+    <Compile Include="OBS.S3\Model\GetACLRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetObjectRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetObjectResponse.cs" />
+    <Compile Include="OBS.S3\Model\HeadBucketRequest.cs" />
+    <Compile Include="OBS.S3\Model\HeadBucketResponse.cs" />
+    <Compile Include="OBS.S3\Model\HeadersCollection.cs" />
+    <Compile Include="OBS.S3\Model\GetObjectMetadataRequest.cs" />
+    <Compile Include="OBS.S3\Model\GetObjectMetadataResponse.cs" />
+    <Compile Include="OBS.S3\Model\Initiator.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\AbortMultipartUploadRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\AbortMultipartUploadResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\HeaderACLRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\BucketUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CommonPrefixesItemUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CompleteMultipartUploadRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CompleteMultipartUploadResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\RoutingRuleConditionUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ContentsItemUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CopyObjectRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CopyObjectResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\InitiateMultipartUploadRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\InitiateMultipartUploadResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteCORSConfigurationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketCorsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteLifecycleConfigurationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteLifecycleConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketPolicyRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketPolicyResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketWebsiteRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteBucketWebsiteResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeletedItemUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteObjectRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteObjectResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteObjectsRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\DeleteObjectsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ErrorsItemUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ExpirationUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetCORSConfigurationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetCORSConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetLifecycleConfigurationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetLifecycleConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketLocationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketLocationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketLoggingRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketLoggingResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketPolicyRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketPolicyResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketVersioningRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketVersioningResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketWebsiteRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetBucketWebsiteResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetACLRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetACLResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetObjectRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetObjectResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GranteeUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GrantUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\HeadBucketRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\HeadBucketResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetObjectMetadataRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\GetObjectMetadataResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\InitiatorUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListBucketsRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListBucketsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListMultipartUploadsRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListMultipartUploadsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListObjectsRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListObjectsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListVersionsRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListVersionsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListPartsRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\ListPartsResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\OwnerUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PartDetailUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutCORSConfigurationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutCORSConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutLifecycleConfigurationRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutLifecycleConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketLoggingRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketLoggingResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketPolicyRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketPolicyResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketVersioningRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketVersioningResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketWebsiteRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutBucketWebsiteResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutACLRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutACLResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutObjectRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\PutObjectResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\RoutingRuleRedirectUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\RestoreObjectRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\RestoreObjectResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\RoutingRuleUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\RulesItemUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\TagUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\TopicConfigurationUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\TransitionUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CopyPartRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\CopyPartResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\UploadPartRequestMarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\UploadPartResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\MultipartUploadUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\VersionsItemUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\LifecycleConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\ListBucketsRequest.cs" />
+    <Compile Include="OBS.S3\Model\ListBucketsResponse.cs" />
+    <Compile Include="OBS.S3\Model\ListMultipartUploadsRequest.cs" />
+    <Compile Include="OBS.S3\Model\ListMultipartUploadsResponse.cs" />
+    <Compile Include="OBS.S3\Model\ListObjectsRequest.cs" />
+    <Compile Include="OBS.S3\Model\ListObjectsResponse.cs" />
+    <Compile Include="OBS.S3\Model\ListVersionsRequest.cs" />
+    <Compile Include="OBS.S3\Model\ListVersionsResponse.cs" />
+    <Compile Include="OBS.S3\Model\ListPartsRequest.cs" />
+    <Compile Include="OBS.S3\Model\ListPartsResponse.cs" />
+    <Compile Include="OBS.S3\Model\S3BucketLoggingConfig.cs" />
+    <Compile Include="OBS.S3\Model\MetadataCollection.cs" />
+    <Compile Include="OBS.S3\Model\KeyVersion.cs" />
+    <Compile Include="OBS.S3\Model\Owner.cs" />
+    <Compile Include="OBS.S3\Model\PutCORSConfigurationRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutCORSConfigurationResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutLifecycleConfigurationRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutLifecycleConfigurationResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketLoggingRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketLoggingResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketPolicyRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketPolicyResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketVersioningRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketVersioningResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketWebsiteRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutBucketWebsiteResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutACLRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutACLResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutObjectRequest.cs" />
+    <Compile Include="OBS.S3\Model\PutObjectResponse.cs" />
+    <Compile Include="OBS.S3\Model\PutWithACLRequest.cs" />
+    <Compile Include="OBS.S3\Model\RoutingRuleRedirect.cs" />
+    <Compile Include="OBS.S3\Model\RequestPaymentConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\ResponseHeaderOverrides.cs" />
+    <Compile Include="OBS.S3\Model\RestoreObjectRequest.cs" />
+    <Compile Include="OBS.S3\Model\RestoreObjectResponse.cs" />
+    <Compile Include="OBS.S3\Model\RoutingRule.cs" />
+    <Compile Include="OBS.S3\Model\LifecycleRule.cs" />
+    <Compile Include="OBS.S3\Model\StreamResponse.cs" />
+    <Compile Include="OBS.S3\Model\Tag.cs" />
+    <Compile Include="OBS.S3\Model\TopicConfiguration.cs" />
+    <Compile Include="OBS.S3\Model\LifecycleTransition.cs" />
+    <Compile Include="OBS.S3\Model\CopyPartRequest.cs" />
+    <Compile Include="OBS.S3\Model\CopyPartResponse.cs" />
+    <Compile Include="OBS.S3\Model\UploadPartRequest.bcl.cs" />
+    <Compile Include="OBS.S3\Model\UploadPartRequest.cs" />
+    <Compile Include="OBS.S3\Model\UploadPartResponse.cs" />
+    <Compile Include="OBS.S3\Model\S3ObjectVersion.cs" />
+    <Compile Include="OBS.S3\Model\WebsiteConfiguration.cs" />
+    <Compile Include="OBS.S3\Util\S3DeleteBucketWithObjectsOptions.cs" />
+    <Compile Include="OBS.S3\Util\S3DeleteBucketWithObjectsRequest.cs" />
+    <Compile Include="OBS.S3\Util\S3DeleteBucketWithObjectsUpdate.cs" />
+    <Compile Include="OBS.S3\Util\S3PostUploadException.cs" />
+    <Compile Include="OBS.S3\Util\S3PostUploadRequest.cs" />
+    <Compile Include="OBS.S3\Util\S3Constants.cs" />
+    <Compile Include="OBS.S3\Encryption\CryptoConfiguration.cs" />
+    <Compile Include="OBS.S3\Encryption\CryptoStorageMode.cs" />
+    <Compile Include="OBS.S3\Encryption\EncryptionMaterials.cs" />
+    <Compile Include="OBS.S3\Encryption\UploadPartContextForEncryption.cs" />
+    <Compile Include="OBS.S3\IObsS3.Extensions.cs" />
+    <Compile Include="OBS.S3\Model\CopyPartRequest.bcl.cs" />
+    <Compile Include="OBS.S3\Model\CopyObjectRequest.bcl.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\LoggingEnabledUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\S3ErrorResponseUnmarshaller.cs" />
+    <Compile Include="OBS.S3\Model\Internal\MarshallTransformations\S3Transforms.cs" />
+    <Compile Include="OBS.S3\Util\S3PostUploadResponse.cs" />
+    <Compile Include="OBS.S3\Util\S3PostUploadSignedPolicy.cs" />
+    <Compile Include="OBS.S3\Util\TransferProgressArgs.cs" />
+    <Compile Include="OBS.S3\S3Enumerations.cs" />
+    <Compile Include="OBS.S3\Transfer\BaseDownloadRequest.cs" />
+    <Compile Include="OBS.S3\Transfer\BaseUploadRequest.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\AbortMultipartUploadsCommand.bcl35.cs">
+      <DependentUpon>AbortMultipartUploadsCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\Internal\AbortMultipartUploadsCommand.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\BaseCommand.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\DownloadCommand.bcl35.cs">
+      <DependentUpon>DownloadCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\Internal\DownloadCommand.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\DownloadDirectoryCommand.bcl.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\DownloadDirectoryCommand.bcl35.cs">
+      <DependentUpon>DownloadDirectoryCommand.bcl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\Internal\MultipartUploadCommand.bcl35.cs">
+      <DependentUpon>MultipartUploadCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\Internal\MultipartUploadCommand.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\OpenStreamCommand.bcl35.cs">
+      <DependentUpon>OpenStreamCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\Internal\OpenStreamCommand.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\SimpleUploadCommand.bcl35.cs">
+      <DependentUpon>SimpleUploadCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\Internal\SimpleUploadCommand.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\UploadDirectoryCommand.bcl.cs" />
+    <Compile Include="OBS.S3\Transfer\Internal\UploadDirectoryCommand.bcl35.cs">
+      <DependentUpon>UploadDirectoryCommand.bcl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\TransferUtility.bcl.cs">
+      <DependentUpon>TransferUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\TransferUtility.cs" />
+    <Compile Include="OBS.S3\Transfer\TransferUtility.bcl35.cs">
+      <DependentUpon>TransferUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\TransferUtilityConfig.bcl35.cs">
+      <DependentUpon>TransferUtilityConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OBS.S3\Transfer\TransferUtilityConfig.cs" />
+    <Compile Include="OBS.S3\Transfer\TransferUtilityDownloadDirectoryRequest.cs" />
+    <Compile Include="OBS.S3\Transfer\TransferUtilityDownloadRequest.cs" />
+    <Compile Include="OBS.S3\Transfer\TransferUtilityOpenStreamRequest.cs" />
+    <Compile Include="OBS.S3\Transfer\TransferUtilityUploadDirectoryRequest.cs" />
+    <Compile Include="OBS.S3\Transfer\TransferUtilityUploadRequest.cs" />
+    <Compile Include="OBS.S3\Encryption\ObsS3EncryptionClient.cs" />
+    <Compile Include="OBS.S3\Util\ObsS3Util.cs" />
+    <Compile Include="OBS.S3\Util\ObsS3Util.Operations.cs" />
+    <Compile Include="OBS.S3\Util\AsyncCancelableResult.cs" />
+    <Compile Include="OBS.S3\Encryption\EncryptionInstructions.cs" />
+    <Compile Include="OBS.S3\Encryption\EncryptionUtils.cs" />
+    <Compile Include="OBS.S3\Util\IAsyncCancelableResult.cs" />
+    <Compile Include="OBS.Runtime\AbstractWebServiceClient.cs" />
+    <Compile Include="OBS.Runtime\ObsClientException.cs" />
+    <Compile Include="OBS.Runtime\ObsServiceException.cs" />
+    <Compile Include="OBS.Runtime\ObsUnmarshallingException.cs" />
+    <Compile Include="OBS.Runtime\ObsWebServiceRequest.cs" />
+    <Compile Include="OBS.Runtime\Internal\ObsWebServiceRequest.bcl.cs" />
+    <Compile Include="OBS.Runtime\ObsWebServiceResponse.cs" />
+    <Compile Include="OBS.Runtime\AWSCredentials.cs" />
+    <Compile Include="OBS.Runtime\ClientConfig.bcl.cs" />
+    <Compile Include="OBS.Runtime\ClientConfig.cs" />
+    <Compile Include="OBS.Runtime\ConstantClass.cs" />
+    <Compile Include="OBS.Runtime\Enumerations.cs" />
+    <Compile Include="OBS.Runtime\ExceptionHandler.cs" />
+    <Compile Include="OBS.Runtime\Internal\ObsWebServiceRequest.cs" />
+    <Compile Include="OBS.Runtime\Internal\AsyncResult.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\AbstractAWSSigner.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\AWS3Signer.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\AWS4Signer.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\CloudFrontSigner.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\QueryStringSigner.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\S3Signer.cs" />
+    <Compile Include="OBS.Runtime\Internal\Auth\SignatureException.cs" />
+    <Compile Include="OBS.Runtime\Internal\DefaultRequest.cs" />
+    <Compile Include="OBS.Runtime\Internal\ErrorResponse.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\SimpleTypeUnmarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\EventStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\IRequest.cs" />
+    <Compile Include="OBS.Runtime\Internal\IRequestData.cs" />
+    <Compile Include="OBS.Runtime\Internal\IRequestEvents.cs" />
+    <Compile Include="OBS.Runtime\Internal\StreamReadTracker.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\ChunkedUploadWrapperStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\CachingWrapperStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Metrics.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\ErrorResponseUnmarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\HttpWebRequestResponseData.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\IMarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\IResponseUnmarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\IUnmarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\IWebResponseData.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\JsonErrorResponseUnmarshaller.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\JsonUnmarshallerContext.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\ResponseUnmarshallers.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\DecryptionWrapper.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\DecryptStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\EncryptionWrapper.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\EncryptStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\EncryptUploadPartStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\IDecryptionWrapper.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\IEncryptionWrapper.cs" />
+    <Compile Include="OBS.Runtime\Internal\Transform\UnmarshallerContext.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Dispatcher.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Extensions.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Hashing.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Logger.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Logger.Diagnostic.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\Logger.Log4net.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\StringUtils.cs" />
+    <Compile Include="OBS.Runtime\PreRequestHandler.cs" />
+    <Compile Include="OBS.Runtime\ResponseHandler.cs" />
+    <Compile Include="OBS.Runtime\ResponseMetadata.cs" />
+    <Compile Include="OBS.Runtime\SignatureException.cs" />
+    <Compile Include="OBS.Runtime\StreamUploadProgressArgs.cs" />
+    <Compile Include="OBS.Runtime\RequestHandler.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\HashingWrapper.bcl.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\HashingWrapper.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\HashStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\IHashingWrapper.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\PartialWrapperStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\ReadOnlyWrapperStream.cs" />
+    <Compile Include="OBS.Runtime\Internal\Util\WrapperStream.cs" />
+    <Compile Include="OBS.Util\AWSConfigs.Models.bcl.cs" />
+    <Compile Include="OBS.Util\AWSConfigs.Models.cs" />
+    <Compile Include="OBS.Util\AWSPublicIPAddressRanges.cs" />
+    <Compile Include="OBS.Util\AWSSDKUtils.bcl.cs" />
+    <Compile Include="OBS.Util\LoggerMgr.cs" />
+    <Compile Include="OBS.Util\ReferenceTracking.cs" />
+    <Compile Include="OBS.Util\CryptoUtil.cs" />
+    <Compile Include="OBS.Util\CryptoUtil.bcl.cs" />
+    <Compile Include="OBS.Util\HeaderKeys.cs" />
+    <Compile Include="OBS.Util\ICryptoUtil.cs" />
+    <Compile Include="OBS.Util\PaginatedResource.cs" />
+    <Compile Include="OBS.Util\PaginatedResourceFactory.cs" />
+    <Compile Include="OBS.Util\ProfileManager.cs" />
+    <Compile Include="OBS.Util\TypeWrapper.bcl.cs" />
+    <Compile Include="OBS.Util\TypeWrapper.cs" />
+    <Compile Include="ObsConfigs.bcl.cs" />
+    <Compile Include="ObsConfigs.cs" />
+    <Compile Include="ObsSection.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ObsClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OBS.Util\AWSSDKUtils.cs" />
+    <Compile Include="RegionEndpoint.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Encodable.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1EncodableVector.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1InputStream.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Object.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Asn1Sequence.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\DerInteger.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\DerSequence.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Asn1\Utilities\FilterStream.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\Math\BigInteger.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\PEMReader.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemGenerationException.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemHeader.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObject.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObjectGenerator.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemObjectParser.cs" />
+    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\PemReader.cs" />
+    <Compile Include="ThirdParty\Ionic.Zlib\Crc32.cs" />
+    <Compile Include="ThirdParty\Json\IJsonWrapper.cs" />
+    <Compile Include="ThirdParty\Json\JsonData.cs" />
+    <Compile Include="ThirdParty\Json\JsonException.cs" />
+    <Compile Include="ThirdParty\Json\JsonMapper.cs" />
+    <Compile Include="ThirdParty\Json\JsonReader.cs" />
+    <Compile Include="ThirdParty\Json\JsonWriter.cs" />
+    <Compile Include="ThirdParty\Json\Lexer.cs" />
+    <Compile Include="ThirdParty\Json\ParserToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="endpoints.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
