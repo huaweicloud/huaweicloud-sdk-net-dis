@@ -8,6 +8,7 @@
 # Build/Test folders
 
 **/bin/
+!**/packages/log4net-2.0.8/bin/
 **/obj/
 **/TestResults/
 **/Temp/
